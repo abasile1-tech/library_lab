@@ -1,5 +1,6 @@
 from flask import render_template, request, redirect, Blueprint
 from models.library import my_library
+from models.book import Book
 
 library_blueprint = Blueprint('library', __name__)
 
@@ -20,4 +21,13 @@ def book(book_title):
 @library_blueprint.route('/library/delete/<book_title>', methods=['POST'])
 def delete_book(book_title):
 	my_library.remove_book_from_library(book_title)
+	return redirect('/library')
+
+@library_blueprint.route('/library/add', methods=['POST'])
+def add_book():
+	title = request.form['title']
+	author = request.form['author']
+	genre = request.form['genre']
+	book = Book(title, author, genre)
+	my_library.add_new_book_to_library(book)
 	return redirect('/library')

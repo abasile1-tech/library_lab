@@ -8,4 +8,13 @@
 			<li><a href="/library/{{book.title}}">{{book.title}}</a></li>
 		</ul>
 	{% endfor %}
+	<form class="form-inline" action="/library/add" method="POST">
+		<label for="title">Title</label>
+		<input type="text" name="title">
+		<label for="author">Author</label>
+		<input type="text" name="author">
+		<label for="genre">Genre</label>
+		<input type="text" name="genre">
+		<input type="submit" value="Add Book">
+	</form>
 {% endblock  %}
