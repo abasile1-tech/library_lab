@@ -10,8 +10,8 @@ class Library:
 			if book.title == title:
 				return book
 
-	def add_new_book_to_library(self):
-		pass
+	def add_new_book_to_library(self, book):
+		self.books.append(book)
 
 	def remove_book_from_library(self):
 		pass

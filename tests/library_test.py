@@ -16,7 +16,9 @@ class TestBook(unittest.TestCase):
 		self.assertEqual(self.hobbit, self.my_library.show_individual_book("The Hobbit"))
 
 	def test_add_new_book_to_library(self):
-		pass
+		chamber_of_secrets = Book("Harry Potter and the Chamber of Secrets", "J.K. Rowling", "Fantasy")
+		self.my_library.add_new_book_to_library(chamber_of_secrets)
+		self.assertEqual([self.philoshophers_stone, self.programming_textbook, self.hobbit, chamber_of_secrets], self.my_library.list_all_books())
 
 	def test_remove_book_from_library(self):
 		pass
