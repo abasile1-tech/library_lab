@@ -13,7 +13,7 @@ class TestBook(unittest.TestCase):
 		self.assertEqual([self.philoshophers_stone, self.programming_textbook, self.hobbit], self.my_library.list_all_books())
 
 	def test_show_individual_book(self):
-		pass
+		self.assertEqual(self.hobbit, self.my_library.show_individual_book("The Hobbit"))
 
 	def test_add_new_book_to_library(self):
 		pass
