@@ -9,7 +9,8 @@ def index():
 
 @library_blueprint.route('/library')
 def library():
-	return render_template('library.html', title='Library', my_library=my_library)
+	books = my_library.list_all_books()
+	return render_template('library.html', title='Library', books=books)
 
 @library_blueprint.route('/library/<book_title>')
 def book(book_title):

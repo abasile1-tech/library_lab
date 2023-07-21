@@ -3,7 +3,7 @@
 {% block content %}
 	<h1>This is the library</h1>
 	<a href="/">Index</a>
-	{% for book in my_library.list_all_books() %}
+	{% for book in books %}
 		<ul>
 			<li><a href="/library/{{book.title}}">{{book.title}}</a></li>
 		</ul>
