@@ -16,3 +16,8 @@ def library():
 def book(book_title):
 	book = my_library.show_individual_book(book_title)
 	return render_template('book.html', title=book_title, book=book)
+
+@library_blueprint.route('/library/delete/<book_title>', methods=['POST'])
+def delete_book(book_title):
+	my_library.remove_book_from_library(book_title)
+	return redirect('/library')
