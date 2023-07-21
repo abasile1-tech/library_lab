@@ -13,4 +13,5 @@ def library():
 
 @library_blueprint.route('/library/<book_title>')
 def book(book_title):
-	return render_template('book.html', title=book_title, book_title=book_title)
+	book = my_library.show_individual_book(book_title)
+	return render_template('book.html', title=book_title, book=book)
