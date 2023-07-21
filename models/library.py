@@ -13,5 +13,6 @@ class Library:
 	def add_new_book_to_library(self, book):
 		self.books.append(book)
 
-	def remove_book_from_library(self):
-		pass
+	def remove_book_from_library(self, title):
+		book = self.show_individual_book(title)
+		self.books.remove(book)
