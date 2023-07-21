@@ -3,7 +3,7 @@ class Library:
 		self.books = books
 
 	def list_all_books(self):
-		pass
+		return self.books
 
 	def show_individual_book(self):
 		pass
